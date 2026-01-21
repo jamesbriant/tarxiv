@@ -11,9 +11,9 @@ ENV UV_LINK_MODE=copy
 # Ensure installed tools can be executed out of the box
 ENV UV_TOOL_BIN_DIR=/usr/local/bin
 
-ARG API_PORT=9001
-ENV TARXIV_API_PORT=${API_PORT}
-EXPOSE ${TARXIV_API_PORT}
+# ARG API_PORT=9001
+# ENV TARXIV_API_PORT=${API_PORT}
+# EXPOSE ${TARXIV_API_PORT}
 
 # Use tarxiv user to install and run our application
 USER tarxiv
@@ -35,5 +35,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 ENV PATH="/app/.venv/bin:$PATH"
 
 ENTRYPOINT []
-CMD ["/app/bin/start-api"]
+# CMD ["/app/bin/start-api"]
+# CMD ["/app/bin/start-fapi.sh"]
+CMD ["/app/bin/start-api-servers.sh"]
 

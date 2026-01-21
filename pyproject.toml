@@ -34,8 +34,9 @@ dependencies = [
     "cherrypy",
     "python-logstash-async",
     "dash>=3.2.0",
+    "fastapi[standard]", # I don't know if standard is necessary
 ]
-requires-python = ">=3.9,<3.13"
+requires-python = ">=3.11,<3.14"
 
 [project.optional-dependencies]
 dev = [
